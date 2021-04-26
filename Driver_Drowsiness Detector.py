@@ -129,8 +129,9 @@ while True:
                 if total>20:
                     if not alarm:
                         cv2.putText(frame, "Drowsy Detected" ,(250, 30),cv2.FONT_HERSHEY_SIMPLEX, 1.7, (0, 0, 0), 4)
-                        # if the driver has closed the eyes for the given seconds the alert will go off
-                        time.sleep(3)
+			
+                        time.sleep(3) # Time too delay before raising the alarm after drowsy
+			
                         alarm = True
                         d=threading.Thread(target=alert_sound)
                         d.setDaemon(True)
